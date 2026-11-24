@@ -8,22 +8,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="ilerleme" aria-hidden="true"></div>
   <header>
-    <img class="kapak" src="resimler/kapak.png" alt="Sarı atkılı kil tilki, nehrin iki yakasındaki bilgisayar masasına, futbol sahasına ve müzik aletlerine bakıyor.">
+    <img class="kapak" width="1672" height="941" src="resimler/kapak.png" alt="Sarı atkılı kil tilki, nehrin iki yakasındaki bilgisayar masasına, futbol sahasına ve müzik aletlerine bakıyor.">
     <div class="baslik">
       <img class="maskot" src="resimler/maskot.png" alt="Mavi fonda gülümseyen, sarı atkılı tilki maskotu.">
       <h1>Yaratıcılık Vadisi</h1>
       <a class="buton" href="#ilgiler">Kartları keşfet <span aria-hidden="true">↓</span></a>
     </div>
+    <section class="tanitim" aria-labelledby="tanitim-basligi">
+      <h2 id="tanitim-basligi">Merhaba, ben Eren Erçin.</h2>
+      <p>Yönetim Bilişim Sistemleri öğrencisiyim. Geliştirdiğim iOS uygulaması Prompty, video çekerken metnimi kameraya bakarak okumamı sağlıyor.</p>
+      <nav class="profil-linkleri" aria-label="İletişim ve projeler">
+        <a class="buton" target="_blank" rel="noopener noreferrer" href="mailto:erenercin05@gmail.com">Bana ulaşın</a>
+        <a class="buton" target="_blank" rel="noopener noreferrer" href="https://github.com/erenercin">GitHub</a>
+        <a class="buton" target="_blank" rel="noopener noreferrer" href="https://prompty.world/">Uygulamalar</a>
+      </nav>
+    </section>
   </header>
   <main id="ilgiler">
-    <h2>İlgi alanlarım</h2>
+    <section class="sahneler" aria-labelledby="ilgi-basligi">
+    <h2 id="ilgi-basligi">İlgi alanlarım</h2>
     <div class="kartlar">
-      <figure><img src="resimler/bilgisayar.png" alt="Sarı kulaklıklı tilki, oyuncu koltuğunda bilgisayar kullanıyor."><figcaption>Bilgisayar</figcaption></figure>
-      <figure><img src="resimler/futbol.png" alt="Sarı formalı tilki, kalenin önünde bir ayağını futbol topuna dayamış."><figcaption>Futbol</figcaption></figure>
-      <figure><img src="resimler/muzik.png" alt="Lacivert takım elbiseli tilki, gözlerini kapatıp çello çalıyor."><figcaption>Klasik müzik</figcaption></figure>
+      <figure><img src="resimler/bilgisayar.png" alt="Sarı kulaklıklı tilki, oyuncu koltuğunda bilgisayar kullanıyor."><figcaption><h3>Bilgisayar</h3><p>Bir oyunun nasıl yapıldığını merak ettiğimde bilgisayarın başına geçerim. En sevdiğim an, yazdığım birkaç satır kodun ekranda ilk kez çalışması.</p></figcaption></figure>
+      <figure><img src="resimler/futbol.png" alt="Sarı formalı tilki, kalenin önünde bir ayağını futbol topuna dayamış."><figcaption><h3>Futbol</h3><p>Sahada en sevdiğim şey, arkadaşım koşuya başlamadan önce boşluğu fark etmek. Tam zamanında verdiğim bir pas beni gol atmak kadar sevindiriyor.</p></figcaption></figure>
+      <figure><img src="resimler/muzik.png" alt="Lacivert takım elbiseli tilki, gözlerini kapatıp çello çalıyor."><figcaption><h3>Klasik müzik</h3><p>Çellonun derin sesini dinlerken bazen aynı parçayı başa sararım. İkinci dinleyişte piyanonun ona nerede cevap verdiğini yakalamak hoşuma gider.</p></figcaption></figure>
     </div>
+    <div class="noktalar" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
   </main>
+  <div class="aksam">
+    <img class="kapak" width="1672" height="941" src="resimler/kapak.png" alt="">
+    <img class="gece" width="1672" height="941" src="resimler/gece.png" alt="Dolunay ve yıldızların altında tilki, kıyıları lambalarla aydınlanan vadiyi seyrediyor.">
+  </div>
+  <button class="kose-maskotu" type="button" aria-label="Tilki maskotu"><img src="resimler/maskot.png" alt=""></button>
+  <div class="isirik" hidden aria-hidden="true">
+    <div class="tilki-yuzu">
+      <img src="resimler/isirik-acik.jpg" alt="">
+      <img class="kapali-agiz" src="resimler/isirik-kapali.jpg" alt="">
+    </div>
+  </div>
+  <audio id="bip" preload="auto" src="ses/bip.wav"></audio>
+  <audio id="citirti" preload="auto" src="ses/isirik.wav"></audio>
   <footer><small>Bu sitedeki görseller yapay zekâ ile üretildi.</small></footer>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="sahneler.js"></script>
 </body>
 </html>

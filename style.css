@@ -43,3 +43,73 @@ footer { padding-block: 1.3rem; border-top: 1px solid var(--vadi-yesili); }
   .baslik { gap: .7rem; }
   .buton { margin-inline-start: 0; }
 }
+
+body { background: var(--zemin, var(--bulut-kremi)); color: var(--yazi, var(--vadi-yesili)); }
+main { padding: 0; }
+.sahneler { padding-block: clamp(2rem, 5vh, 4rem); }
+.kartlar { grid-template-columns: 1fr; gap: 3rem; }
+.kartlar figure { display: grid; align-items: center; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+figcaption h3 { margin: 0; font-size: clamp(1.7rem, 4vw, 3.6rem); letter-spacing: -.04em; }
+figcaption p { max-width: 36ch; font-size: clamp(1rem, 1.6vw, 1.3rem); font-weight: normal; line-height: 1.6; }
+.noktalar { display: none; }
+.ilerleme { position: fixed; inset: 0 0 auto; height: 4px; background: var(--gunes-sarisi); transform: scaleX(0); transform-origin: left; z-index: 5; pointer-events: none; }
+.kose-maskotu { position: fixed; right: 1rem; bottom: 1rem; z-index: 3; background: transparent; padding: 0; border: 0; border-radius: 50%; cursor: pointer; touch-action: manipulation; user-select: none; }
+.kose-maskotu img { width: 45px; border-radius: 50%; border: 2px solid var(--gunes-sarisi); transform-origin: center bottom; }
+.aksam { position: relative; }
+.gece { position: absolute; inset: 0; width: 100%; height: 100%; opacity: var(--ay, 1); }
+footer { border-color: currentColor; padding-right: 3.5rem; }
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .etkin .sahneler { height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: center; }
+  .etkin .kartlar { position: relative; height: min(68vh, 520px); }
+  .etkin figure { position: absolute; inset: 0 2.2rem 0 0; opacity: 0; grid-template-columns: min(45%, 64vh) 1fr; }
+  .etkin figure:first-child { opacity: 1; }
+  .etkin .noktalar { position: absolute; right: 0; top: 50%; display: grid; gap: .65rem; }
+  .noktalar i { width: 10px; height: 10px; border-radius: 50%; border: 1px solid currentColor; }
+  .noktalar .secili { background: var(--gunes-sarisi); }
+  .yerel { height: 400vh; }
+  .yerel .sahneler { position: sticky; top: 0; }
+}
+@media (max-width: 767.98px) {
+  .kartlar figure { display: block; }
+  figcaption { padding-top: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ilerleme { transform: none; }
+  .kartlar figure { display: block; max-width: 42rem; }
+  .gece { opacity: 1; }
+}
+
+.tanitim {
+  width: min(1100px, 90%);
+  margin-inline: auto;
+  padding-top: clamp(2rem, 5vw, 4rem);
+}
+.tanitim h2 { margin-bottom: .6rem; }
+.tanitim p { max-width: 60ch; margin: 0 0 1.25rem; line-height: 1.6; }
+.profil-linkleri { display: flex; flex-wrap: wrap; gap: .75rem 1.4rem; align-items: center; }
+.profil-linkleri a { font-weight: bold; text-underline-offset: .2em; }
+.profil-linkleri .buton { margin-inline-start: 0; }
+
+.isirik:not([hidden]) {
+  position: fixed; inset: 0; z-index: 8; display: grid; place-items: center;
+  pointer-events: none; background: rgb(10 22 36 / 34%);
+}
+.tilki-yuzu {
+  width: min(62vw, 55vh, 370px); aspect-ratio: 1; position: relative;
+  border-radius: 50%; overflow: hidden; box-shadow: 0 1rem 4rem #07172855;
+  background: #0065ff;
+}
+.tilki-yuzu img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.kapali-agiz { opacity: 0; }
+.isirik.isirdi .kapali-agiz { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .isirik:not([hidden]) .tilki-yuzu { animation: tilki-isirir 850ms both; }
+}
+@keyframes tilki-isirir {
+  0% { opacity: 0; transform: scale(.68); }
+  25% { opacity: 1; transform: scale(.98); }
+  45% { transform: scale(1.22); }
+  72% { opacity: 1; transform: scale(1.04); }
+  100% { opacity: 0; transform: scale(.95); }
+}
